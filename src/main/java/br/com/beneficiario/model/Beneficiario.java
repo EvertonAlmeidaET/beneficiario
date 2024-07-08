@@ -8,26 +8,33 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(of = "IdDocumento")
+@EqualsAndHashCode(of = "idBeneficiario")
 
 @Entity
-@Table(name = "tb_documento")
-public class Documento implements Serializable {
+@Table (name = "tb_beneficiario")
+public class Beneficiario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdDocumento;
+    private Long idBeneficiario;
 
-    @JsonProperty("tipoDocumento")
-    private String tipoDocumento;
+    @JsonProperty("nome")
+    private String nome;
 
-    @JsonProperty("descricao")
-    private String descricao;
+    @JsonProperty("telefone")
+    private String telefone;
+
+    @JsonProperty("dataNascimento")
+    @JsonFormat(pattern="dd-MM-yyyy")
+    private LocalDateTime dataNascimento;
 
     @JsonProperty("dataInclusao")
     @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
@@ -38,4 +45,10 @@ public class Documento implements Serializable {
     @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
     @JsonIgnore
     private LocalDateTime dataAtualizacao;
+
+    @JsonProperty("documento")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "beneficiario_id")
+    private List<Documento> documento = new ArrayList<>();
+
 }

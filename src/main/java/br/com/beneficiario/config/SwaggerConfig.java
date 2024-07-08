@@ -13,9 +13,9 @@ public class SwaggerConfig {
     public OpenAPI customAPI(){
         return new OpenAPI().info(
                 new Info()
-                        .title("GESTÃO DE FUNCIONARIOS")
+                        .title("BENEFICIÁRIO")
                         .version("1.0.0")
-                        .license(new License().name("Lincença do Sistema").url("https://github.com/EvertonAlmeidaET/gestao-funcionarios/blob/main/LICENSE"))
+                        .license(new License().name("Lincença do Sistema").url("https://github.com/EvertonAlmeidaET/beneficiario/blob/master/LICENSE"))
         );
     }
 
