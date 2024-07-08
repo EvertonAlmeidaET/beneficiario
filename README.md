@@ -1,5 +1,5 @@
 # Gestão de Funcionário
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/EvertonAlmeidaET/gestao-funcionarios/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/EvertonAlmeidaET/beneficiario/blob/master/LICENSE) 
 
 # Sobre o projeto
 
