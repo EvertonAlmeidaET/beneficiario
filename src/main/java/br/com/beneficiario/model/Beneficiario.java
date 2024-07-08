@@ -33,22 +33,20 @@ public class Beneficiario implements Serializable {
     private String telefone;
 
     @JsonProperty("dataNascimento")
-    @JsonFormat(pattern="dd-MM-yyyy")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDateTime dataNascimento;
 
     @JsonProperty("dataInclusao")
-    @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
-    @JsonIgnore
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
     private LocalDateTime dataInclusao;
 
     @JsonProperty("dataAtualizacao")
-    @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
-    @JsonIgnore
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
     private LocalDateTime dataAtualizacao;
 
     @JsonProperty("documento")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "beneficiario_id")
+    @JoinColumn(name = "id_beneficiario")
     private List<Documento> documento = new ArrayList<>();
 
 }

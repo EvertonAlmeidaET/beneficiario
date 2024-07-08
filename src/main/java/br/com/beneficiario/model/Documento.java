@@ -31,11 +31,9 @@ public class Documento implements Serializable {
 
     @JsonProperty("dataInclusao")
     @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
-    @JsonIgnore
     private LocalDateTime dataInclusao;
 
     @JsonProperty("dataAtualizacao")
     @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
-    @JsonIgnore
     private LocalDateTime dataAtualizacao;
 }

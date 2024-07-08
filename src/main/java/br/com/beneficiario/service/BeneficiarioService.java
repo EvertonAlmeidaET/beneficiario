@@ -4,7 +4,6 @@ import br.com.beneficiario.model.Beneficiario;
 import br.com.beneficiario.model.Documento;
 import br.com.beneficiario.repository.BeneficiarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

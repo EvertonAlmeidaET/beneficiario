@@ -18,5 +18,4 @@ public class SwaggerConfig {
                         .license(new License().name("Lincença do Sistema").url("https://github.com/EvertonAlmeidaET/beneficiario/blob/master/LICENSE"))
         );
     }
-
 }
